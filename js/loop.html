@@ -9,7 +9,7 @@
 
 <body>
 
-    <p id="demo"></p>
+    <!-- <p id="demo"></p> -->
 
     <script>
 
@@ -23,13 +23,28 @@
         // document.getElementById("demo").innerHTML = text;
 
 
-        const car = ["Audi", "Swift", "Enova", "Tesla"]
-        let len = car.length;
-        let text = " ";
-        for (let i = 0; i < len; i=i+2) {
-            text += car[i] + "<br>"
+        // const car = ["Audi", "Swift", "Enova", "Tesla"]
+        // let len = car.length;
+        // let text = " ";
+        // for (let i = 0; i < len; i=i+2) {
+        //     text += car[i] + "<br>"
+        // }
+        // document.getElementById("demo").innerHTML = text;
+
+        // while loop
+
+        // let n=1;
+        // while(n<=5){
+        //     document.write("<br> hello");
+        //     n++;
+        // }
+
+        let num = Number(prompt("Enter a number:"));
+        while(num<=num*10){
+            document.write("<br>"+num);
+            num=num*2;
         }
-        document.getElementById("demo").innerHTML = text;
+
 
 
 
