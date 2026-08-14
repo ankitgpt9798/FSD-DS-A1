@@ -1,13 +1,15 @@
 
 
-      function abes( a,b){
-        return a+b;
-      }
+    //   function abes( a,b){
+    //     return a+b;
+    //   }
 
-       let result=abes(10,20);
-      console.log(result);
+    //    let result=abes(10,20);
+    //   console.log(result);
 
-      // arrow function
-     const abes=()=>"hello";
-     console.log(abes());
+    //   // arrow function
+    //  const abes=()=>"hello";
+    //  console.log(abes());
+
+    
     
