@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY shop</title>
+    <style>
+        table{
+            width: 80%;
+            margin: auto;
+            padding: 13px;
+            font-size: 25px;
+            color: red;
+            border: 2px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Price</th>
+            </tr>
+            
+        </thead>
+        <tbody id="data">
+
+        </tbody>
+    </table>
+
+    <script>
+        const id=document.getElementById("data");
+        // const url="https://dummyjson.com/products";
+        async function loaddata() {
+          try{
+          const response = await fetch('https://dummyjson.com/products');
+        //   if(!response)
+        //       throw new Error ('http error : ${response.status}');
+          const user= await response.json();
+          console.log(user.products); 
+          let row='';
+          user.products.map((i,index)=>{
+            row+=`<tr>
+                <td>${index+1}</td>
+                <td>${i.title}</td>
+                <td><img src="${i.images[0]}" width="100px" height="100px"/></td>
+                <td>${i.category}</td>
+                <td>${i.price}</td>
+            </tr>`;
+          })
+          id.innerHTML=row;
+          }
+          
+          catch(err){
+            console.log("error"+err);
+          }  
+        }
+        loaddata();
+    
+    </script>
+</body>
+</html>
