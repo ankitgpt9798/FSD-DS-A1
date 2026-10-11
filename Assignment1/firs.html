@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Application II</title>
+</head>
+<body>
+  <script>
+    const Product = {
+      Tea: [
+        { name: "Tata", price: 210 },
+        { name: "Taj", price: 160 }
+      ],
+      Coffee: [
+        { name: "Latte", price: 45 },
+        { name: "Classic", price: 30 }
+      ],
+      Sugar: [
+        { name: "Brown", price: 110 },
+        { name: "White", price: 87 }
+      ],
+      Pulse: [
+        { name: "Mustard", price: 120 },
+        { name: "Yellow", price: 150 }
+      ]
+    };
+
+    let category = prompt("Enter product category (Tea, Coffee, Sugar, Pulse):");
+
+    if (Product[category]) {
+
+      let options = Product[category].map(p => p.name + " (" + p.price + ")").join(" / ");
+      let choice = prompt("Choose one: " + options);
+
+    
+      let selected = Product[category].find(p => p.name.toLowerCase() === choice.toLowerCase());
+
+      if (selected) {
+        let qty = parseInt(prompt("Enter quantity:"));
+        let total = selected.price * qty;
+
+        document.write("Product: " + selected.name + "<br>");
+        document.write("Category: " + category + "<br>");
+        document.write("Quantity: " + qty + "<br>");
+        document.write("Total Amount: " + total);
+      } else {
+        document.write(" Invalid option chosen.");
+      }
+    } else {
+      document.write(" No such product category.");
+    }
+  </script>
+</body>
+</html>
